@@ -15,3 +15,12 @@ app.listen(port, function(req,res){
     console.log('The parsed url is '+ parsedUrl.protocol + " The host is " +parsedUrl.host+ " The query you entered is " +parsedUrl.query);
 
 });
+
+app.use(function(request, response, next){
+    console.log("In comes a " +request.method + " to" +request.url);
+    next();
+});
+
+app.use(function(request, response, next){
+    var minute = new Date().getMinutes();
+})
