@@ -10,12 +10,6 @@ var parsedUrl = url.parse("http://www.example.com/profile?name=barry");
 var app = express();
 var port = 4000 || process.env.port;
 
-app.listen(port, function(req,res){
-    console.log('Server running at port ' +port);
-    console.log('The parsed url is '+ parsedUrl.protocol + " The host is " +parsedUrl.host+ " The query you entered is " +parsedUrl.query);
-
-});
-
 app.use(function(request, response, next){
     console.log("In comes a " +request.method + " to" +request.url);
     next();
@@ -23,4 +17,17 @@ app.use(function(request, response, next){
 
 app.use(function(request, response, next){
     var minute = new Date().getMinutes();
-})
+    if(minute%2 == 0) {
+        next();
+    }else{
+        response.statusCode(403);
+        response.end("Not Authorized");
+    }
+});
+
+app.listen(port, function(req,res){
+    console.log('Server running at port ' +port);
+    console.log('The parsed url is '+ parsedUrl.protocol + " The host is " +parsedUrl.host+ " The query you entered is " +parsedUrl.query);
+
+});
+
