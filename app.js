@@ -1,6 +1,6 @@
 var express = require('express');
 var mustache = require('mustache');
-var logger = require('logger');
+var logger = require('morgan');
 var result = mustache.render(" Hi, {{ first }} {{ last }}", {
     first: "Kvin",
     last: "Vin"
@@ -16,13 +16,15 @@ app.use(function(request, response, next){
     next();
 });
 
+app.use(logger("short"));
+
 app.use(function(request, response, next){
     var minute = new Date().getMinutes();
     if(minute%2 == 0) {
         next();
     }else{
-        response.statusCode(403);
-        response.end("Not Authorized");
+       // response.statusCode(403);
+        //response.end("Not Authorized");
     }
 });
 
