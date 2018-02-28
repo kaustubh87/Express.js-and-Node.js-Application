@@ -1,5 +1,6 @@
 var express = require('express');
 var mustache = require('mustache');
+var logger = require('logger');
 var result = mustache.render(" Hi, {{ first }} {{ last }}", {
     first: "Kvin",
     last: "Vin"
