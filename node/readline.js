@@ -1,4 +1,5 @@
 var readline = require('readline');
+var util = require('util');
 
 var RL = readline.createInterface(process.stdin, process.stdout);
 
@@ -11,7 +12,7 @@ RL.question('What is your name? ', (name) => {
 
    RL.on('line', (age)=> {
         if(age < 18){
-            
+                util.log(`${name.trim()} because `)
         }
    });
 });
