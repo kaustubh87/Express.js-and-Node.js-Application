@@ -14,5 +14,8 @@ RL.question('What is your name? ', (name) => {
         if(age < 18){
                 util.log(`${name.trim()} because `)
         }
+        else{
+            util.log('You cannot proceed as you are not 18 years old');
+        }
    });
 });
