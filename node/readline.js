@@ -10,6 +10,8 @@ RL.question('What is your name? ', (name) => {
 
    RL.prompt();
 
+   RL.prompt();
+
    RL.on('line', (age)=> {
         if(age < 18){
                 util.log(`${name.trim()} because you are more than 18 years old`);
