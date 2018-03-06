@@ -22,4 +22,12 @@ RL.question('What is your name? ', (name) => {
             RL.close();
         }
    });
+
+   Rl.on('line', (age) => {
+        if(age < 35){
+            Rl.close();
+        }else {
+            Rl.close();
+        }
+   });
 });
