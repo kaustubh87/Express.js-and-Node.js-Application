@@ -8,4 +8,4 @@ emitter.on('newEvent', (message) => {
 });
 
 emitter.emit('newEvent', 'Hello This is Kvin');
-emitter.emit('Event 2');
+emitter.emit('Event 2', 'Hello');
