@@ -1,4 +1,4 @@
-module.exports.title = 'Node';
+var inst = require('../node/lib');
 
-console.log(module.exports);
+console.log(inst.calc(30, 40));
 
