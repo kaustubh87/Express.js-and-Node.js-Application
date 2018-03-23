@@ -1,6 +1,6 @@
 const execute = require('child_process').exec;
 
-execute("ls", (err, stdout) => {
+execute("ls -l", (err, stdout) => {
     if(err){
        return err;
     }
