@@ -1,4 +1,4 @@
-
+//const emitter = require('./modules/sendemail');
 
 emitter.on('emailEvent', (message) => {
     console.log(`Email: , ${message}`);
