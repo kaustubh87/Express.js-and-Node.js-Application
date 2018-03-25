@@ -4,4 +4,6 @@ const fs = require('fs');
 //fs.rmdirSync('./newDir');
 
 /* Method to remove file inside a given directory */
+
+
 fs.unlinkSync('./newDir/newfile.js');
